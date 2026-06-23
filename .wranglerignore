@@ -1,0 +1,14 @@
+node_modules/
+package-lock.json
+.wrangler/
+.git
+.gitignore
+dist/
+build/
+*.log
+.DS_Store
+.env
+.env.local
+.vscode/
+.idea/
+README.md

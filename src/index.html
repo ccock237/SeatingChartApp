@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Your Table</title>
+    <script>
+        // Add timestamped stylesheet and main script to avoid cached 304s during development
+        (function(){
+            const t = Date.now();
+            const l = document.createElement('link');
+            l.rel = 'stylesheet';
+            l.href = `index.css?t=${t}`;
+            document.head.appendChild(l);
+
+            const s = document.createElement('script');
+            s.src = `index.js?t=${t}`;
+            document.head.appendChild(s);
+        })();
+    </script>
+</head>
+
+<body>
+    <name-search></name-search>
+    <search-results></search-results>
+    <table-map></table-map>
+    <control-center></control-center>
+
+    <script type="module">
+        // Dynamic imports with cache-busting query to force fresh fetches during development
+        (function(){
+            const t = Date.now();
+            import(`./name-search.js?t=${t}`);
+            import(`./search-results.js?t=${t}`);
+            import(`./table-map.js?t=${t}`);
+            import(`./control-center.js?t=${t}`);
+        })();
+    </script>
+</body>
+
+</html>
